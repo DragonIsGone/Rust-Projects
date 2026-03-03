@@ -1,12 +1,28 @@
+use std::io;
+
 fn main() {
+    let a = [1, 2, 3, 4, 5];
 
-    let x = 5;
+    println!("Please enter an array index.");
 
-    let x = x+1;
+    let mut index = String::new();
 
-    {
-        let x = x*2;
-        println!("Val of X inside is {x}");
-    }
-    println!("The val of x outside is {x}");
+    io::stdin()
+        .read_line(&mut index)
+        .expect("Failed to read line");
+
+    let index: usize = index
+        .trim()
+        .parse()
+        .expect("Index entered was not a number");
+
+    let element = a[index];
+
+    println!("The value of the element at index {index} is: {element}");
+    let index: i32 = index.try_into().unwrap();
+    another_function(index);
+}
+
+fn another_function(x: i32) {
+    println!("The second function was run and the number is {x}")
 }
