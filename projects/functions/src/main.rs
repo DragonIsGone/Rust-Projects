@@ -1,12 +1,24 @@
-fn main() {
-    let x = plus_one(5);
-    println!("The value of x is {x}");
+use std::io;
+
+fn main(){
+    //convert cel to far (cringe)
+
+    let mut input = String::new();
+    io::stdin() 
+        .read_line(&mut input)
+        .expect("Failed to Read Line");
+
+    let input: f32 = match input.trim().parse::<f32>() {
+        Ok(num) => num,
+        Err(_) => {
+            println!("Not a number run again");
+            return;
+        },
+    };
+    convert(input);
 }
 
-fn five() -> i32 {
-    5
-}
-
-fn plus_one(x: i32) -> i32 {
-    x+1
+fn convert(input: f32) {
+    let result = input * 1.8 + 32.0;
+    println!("{result}");
 }
