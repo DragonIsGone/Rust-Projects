@@ -1,0 +1,11 @@
+# Ignore the build directory for all projects
+**/target/
+
+# Ignore the lock file (Optional: recommended for libraries, 
+# but usually kept for final applications/binaries)
+# **/Cargo.lock
+
+# IDE specific files
+.vscode/
+.idea/
+**/*.rs.bk
