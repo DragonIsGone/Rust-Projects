@@ -1,3 +1,3 @@
 # Hellow ( •̀ ω •́ )y
 
-This is just me practicing rust
+his is just me practicing zig ^-^
